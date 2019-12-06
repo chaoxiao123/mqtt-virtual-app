@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package mq;
+
+enum ErrCode
+{
+	kOk                   = 0; //成功
+	kSvcNotAvailable      = 1; //服务不可用
+	kConcurrencyLimit     = 2; //超过并发限制
+	kNoPermission         = 3; //读、写topic无权限
+	kIllegalMsg           = 4; //消息非法,pb发序列化失败
+	kIllegalTopic         = 5; //topic非法
+	kTopicNotExist        = 6; //topic不存在
+}
+
+message AppendRequest{
+	uint64 reqid          = 1; //用户自定义的请求id,用于确认
+	repeated bytes msg    = 2; //具体的数据
+}
+message AppendResponse{
+	uint64 reqid          = 1; //生产时用户自定义的请求id
+	string ns             = 2; //namespace
+	string topic          = 3; //topic
+	ErrCode errcode       = 4; //错误码
+	repeated uint64 msgid = 5; //MQ回复的msgid
+}
+
+message Msg{
+	uint64 msgid          = 1; //MQ中该消息的真实id
+	bytes data            = 2; //具体的数据
+}

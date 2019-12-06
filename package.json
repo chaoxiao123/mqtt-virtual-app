@@ -1,0 +1,29 @@
+{
+  "name": "mqtt-virtual-app",
+  "version": "0.1.0",
+  "description": "virtual app sending adn receiving messages to devices",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run unit && npm run e2e"
+  },
+  "author": "lxq <814539945@qq.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/chaoxiao123/mqtt-virtual-app.git"
+  },
+  "keywords": [
+    "mqtt"
+  ],
+  "bugs": {
+    "url": "https://github.com/chaoxiao123/mqtt-virtual-app/issues"
+  },
+  "homepage": "https://github.com/chaoxiao123/mqtt-virtual-app#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "log4js": "^6.1.0",
+    "mqtt": "^3.0.0",
+    "uuid": "^3.3.3",
+    "validate": "^5.1.0"
+  }
+}
