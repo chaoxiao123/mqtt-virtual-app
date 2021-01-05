@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/chaoxiao123/mqtt-virtual-app#readme",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "log4js": "^6.1.0",
     "mqtt": "^3.0.0",
     "uuid": "^3.3.3",
